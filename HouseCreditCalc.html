@@ -8,39 +8,47 @@
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <title>Fast Credit</title>
+    <title>Housing Loan</title>
 </head>
 
 <body>
     <div class="container">
         <form>
             <div class="input-container">
-                <label for="amount">Amount of the credit </label>
-                <input type="text" id="amount" oninput=validateAmountFC() />
+                <label for="amount">Amount of the credit (eur.) </label>
+                <input type="text" id="amount" />
             </div>
             <div class="input-container">
                 <label for="years">Repayment period (years) </label>
-                <input type="number" id="years" oninput=validateYearFC() />
+                <input type="number" id="years" oninput="if(this.value>30) { this.value = 30; }" />
+            </div>
+
+            <div class="input-container">
+                <label for="salary">Salary per month (eur.)</label>
+                <input type="number" id="salary" />
+            </div>
+            <div class="input-container">
+                <label for="kids">Kids </label>
+                <input type="number" id="kids" />
             </div>
             <div class="input-container">
                 <label for="percent">Annual interest (%) </label>
-                <input type="number" id="percent" value=20 readonly />
+                <input type="number" id="percent" value=2 readonly />
             </div>
         </form>
-        <button onclick=calculateFC()>Calculate</button>
+        <button onclick=calculateHouseCredit()>Calculate</button>
+
         <div class="output-container">
             <div class="result">
-                <p>Monthly payment: </p>
+                <p>Monthly payment(eur.):</p>
                 <p class="output" id="payment"></p>
             </div>
             <div class="result">
-                <p>Total payment: </p>
+                <p>Total payment (eur.):</p>
                 <p class="output" id="total"></p>
             </div>
-
         </div>
     </div>
-
 </body>
 
 </html>
