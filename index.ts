@@ -62,11 +62,11 @@ function calculateCredit(credit: Credit) {
 }
 
 function calculateFastCredit() {
-    let fcredit = new FastCredit(parseFloat(amountDOM.value), parseFloat(yearsDOM.value), parseFloat(percentDOM.value));
-    calculateCredit(fcredit);
+    let fastCredit = new FastCredit(parseFloat(amountDOM.value), parseFloat(yearsDOM.value), parseFloat(percentDOM.value));
+    calculateCredit(fastCredit);
 }
 
-function validateYearFC() {
+function validateYearFastCredit() {
     if (parseFloat(yearsDOM.value) > 2) {
         yearsDOM.value = "2"
     } else if (parseFloat(yearsDOM.value) < 0) {
@@ -74,7 +74,7 @@ function validateYearFC() {
     }
 }
 
-function validateAmountFC() {
+function validateAmountFastCredit() {
     if (parseFloat(amountDOM.value) > 5000) {
         amountDOM.value = "5000"
     } else if (parseFloat(amountDOM.value) < 0) {
@@ -113,6 +113,6 @@ class HouseCredit extends Credit {
 }
 
 function calculateHouseCredit() {
-    let hcredit = new HouseCredit(parseFloat(amountDOM.value), parseFloat(yearsDOM.value), parseFloat(percentDOM.value), parseFloat(salaryDOM.value), parseFloat(kidsDOM.value));
-    calculateCredit(hcredit);
+    let houseCredit = new HouseCredit(parseFloat(amountDOM.value), parseFloat(yearsDOM.value), parseFloat(percentDOM.value), parseFloat(salaryDOM.value), parseFloat(kidsDOM.value));
+    calculateCredit(houseCredit);
 }
